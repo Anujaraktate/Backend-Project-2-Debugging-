@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes taking app</title>
+    <style>
+        #button{
+                border-color: black;
+                border-radius: 8px;
+                background-color: blanchedalmond;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 15px;}
+        #input{border-radius: 60px;
+               padding-left: 8px;
+               padding-right: 8px;
+               font-size: 25px;
+               border-color: black;
+               border-width: 5px;} 
+        body{background-image: url('https://images15.fotki.com/v1664/photos/5/115/13502360/oundforpowerpointaquabackgroun-vi.jpg')}              
+        body{width: 70%;
+             height: 60;
+             margin: 10% 20% ;}            
+        div{background-color: aliceblue;
+            flex-grow: 0;}
+        #reset{border-color: black;
+               border-radius: 8px;
+               background-color: blanchedalmond;
+               font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+               font-size: 15px;}                
+    </style>
+</head>
+<body>
+    <center>
+    <form action="">
+        <img src="https://openclipart.org/image/800px/285792" height="150" width="150"><br>
+        <h2 style="color: black; font-size: 25px;">Flask's Notes Taking Web App</h2><br><br>
+        <input type="text" name="note" placeholder="Enter a note" size="" id="input" style="background-color: antiquewhite;"><br><br>
+        <button id="button" value="submit" >Add Note</button>
+        <button id="reset" value="Reset" >Reset</button>
+    </form>
+    </center>
+    <div>
+        <ul>
+            {% for note in notes%}
+                {% if note == None%}
+                {% else %}
+                    <li>{{ note }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>    
+</body>
+</html>
